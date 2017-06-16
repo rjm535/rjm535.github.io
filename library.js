@@ -26,7 +26,7 @@ function msToTime(s) {
 
 function myTimer() {
     var d = new Date();
-    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+    // document.getElementById("demo").innerHTML = d.toLocaleTimeString();
     if(current_item) {
         document.getElementById("current_item").innerHTML = todo_list[current_item]["name"] 
                                                             + " --  "
