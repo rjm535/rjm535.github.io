@@ -98,30 +98,30 @@ function displayLists() {
     temp_div = '<ul style="list-style-type:none">'
     for(i in todo_list) {
         if(i == current_item) {
-            temp_div += '<li id="' + i
+            temp_div += '<div class="controls" <li id="' + i
                      + '">'
                      + '<button onclick="softDeleteItem(this)">x</button>'
                      + todo_list[i]["name"] + " --  " + msToTime(todo_list[i]["time"])
-                     + '</li>';
+                     + '</li> </div>';
         }
         else {
-            temp_div += '<li id="' + i
+            temp_div += '<div class="controls"><<li id="' + i
                      + '">'
-                     + '<button onclick="softDeleteItem(this)">x</button>'
+                     + 'button onclick="softDeleteItem(this)">x</button>'
                      + todo_list[i]["name"] + " -- " +  msToTime(todo_list[i]["time"])
                      + '<button onclick="startItem(this)">Start</button>'
-                     + '</li>';
+                     + '</li></div>';
         }
     }
     temp_div += '</ul>'
     document.getElementById('todo_list').innerHTML = temp_div
     temp_div = '<ul style="list-style-type:none">'
     for(i in deleted_list) {
-        temp_div += '<li id="' + i
+        temp_div += '<div class="controls"><li id="' + i
                  + '">'
                  + '<button onclick="hardDeleteItem(this)">x</button>'
                  + deleted_list[i]["name"] + " -- " +  msToTime(deleted_list[i]["time"])
-                 + '</li>';
+                 + '</li></div>';
     }
     temp_div += '</ul>'
     document.getElementById('completed_list').innerHTML = temp_div
