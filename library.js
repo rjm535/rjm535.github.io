@@ -98,7 +98,7 @@ function displayLists() {
     temp_div = '<ul style="list-style-type:none">'
     for(i in todo_list) {
         if(i == current_item) {
-            temp_div += '<div class="controls" <li id="' + i
+            temp_div += '<div class="controls"> <li id="' + i
                      + '">'
                      + '<button onclick="softDeleteItem(this)"> x </button>'
                      + todo_list[i]["name"] + " --  " + msToTime(todo_list[i]["time"])
