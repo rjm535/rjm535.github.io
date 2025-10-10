@@ -100,14 +100,14 @@ function displayLists() {
         if(i == current_item) {
             temp_div += '<div class="controls"> <li id="' + i
                      + '">'
-                     + '<button onclick="softDeleteItem(this)"> x </button>'
+                     + '<button onclick="softDeleteItem(this)"> x </button>' + ' '
                      + todo_list[i]["name"] + " --  " + msToTime(todo_list[i]["time"])
                      + '</li> </div>';
         }
         else {
             temp_div += '<div class="controls"> <li id="' + i
                      + '">'
-                     + 'button onclick="softDeleteItem(this)"> x </button>'
+                     + '<button onclick="softDeleteItem(this)"> x </button>' + ' '
                      + todo_list[i]["name"] + " -- " +  msToTime(todo_list[i]["time"])
                      + '<button onclick="startItem(this)">Start</button>'
                      + '</li></div>';
@@ -119,7 +119,7 @@ function displayLists() {
     for(i in deleted_list) {
         temp_div += '<div class="controls"><li id="' + i
                  + '">'
-                 + '<button onclick="hardDeleteItem(this)">x</button>'
+                 + '<button onclick="hardDeleteItem(this)">x</button>' + ' '
                  + deleted_list[i]["name"] + " -- " +  msToTime(deleted_list[i]["time"])
                  + '</li></div>';
     }
