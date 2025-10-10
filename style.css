@@ -1,24 +1,198 @@
-body {
-  font-family: 'Palantino Linotype', 'Book Antiqua', Palantino, serif;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  background: gray;
-  padding-left: 15px;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+    
+    body {
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      background-color: #000;
+      color: #00ff00;
+      padding: 20px;
+      margin: 0;
+      background-image: 
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 255, 0, 0.03) 2px,
+          rgba(0, 255, 0, 0.03) 4px
+        );
+      animation: flicker 0.15s linear infinite alternate;
+    }
 
-button {
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 10px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-}
-button:hover {
-    background-color=black;
-    color:white;
-}
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.98; }
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.3) 100%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      color: #00ff00;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #00ff00;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1::before {
+      content: '>>> ';
+      color: #00aa00;
+    }
+
+    h1::after {
+      content: ' <<<';
+      color: #00aa00;
+    }
+
+    ul#linkList {
+      list-style-type: none;
+      padding: 20px;
+      flex: 1;
+      margin: 0;
+      background-color: #001100;
+      border: 2px solid #00ff00;
+      border-radius: 0;
+      box-shadow: 
+        0 0 20px rgba(0, 255, 0, 0.5),
+        inset 0 0 20px rgba(0, 255, 0, 0.1);
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+      padding: 8px 12px;
+      border-bottom: 1px solid #003300;
+      cursor: grab;
+      font-size: 14px;
+      background-color: transparent;
+      transition: background-color 0.2s;
+    }
+
+    li:hover {
+      background-color: rgba(0, 255, 0, 0.05);
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    li.dragging {
+      opacity: 0.6;
+      background-color: rgba(0, 255, 0, 0.1);
+    }
+
+    li::before {
+      content: '> ';
+      color: #00aa00;
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
+      color: #00ff00;
+      flex-grow: 1;
+      margin-right: 10px;
+      font-weight: normal;
+      text-shadow: 0 0 5px #00ff00;
+    }
+
+    a:hover {
+      color: #00ffff;
+      text-decoration: none;
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    .controls {
+      display: flex;
+      gap: 5px;
+    }
+
+    .controls button {
+      padding: 4px 8px;
+      font-size: 12px;
+      background-color: #003300;
+      border: 1px solid #00aa00;
+      border-radius: 0;
+      cursor: pointer;
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      color: #00ff00;
+      font-weight: bold;
+      text-shadow: 0 0 3px #00ff00;
+      transition: all 0.2s;
+    }
+
+    .controls button:hover {
+      background-color: #006600;
+      box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+      text-shadow: 0 0 5px #00ff00;
+    }
+
+    .controls button:active {
+      background-color: #004400;
+    }
+
+    /* Main content container for side-by-side layout */
+    .main-content {
+      display: flex;
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Iframe container styles */
+    .iframe-container {
+      flex: 1;
+      padding: 20px;
+      background-color: #001100;
+      border: 2px solid #00ff00;
+      box-shadow: 
+        0 0 20px rgba(0, 255, 0, 0.5),
+        inset 0 0 20px rgba(0, 255, 0, 0.1);
+    }
+
+    .iframe-container h2 {
+      color: #00ff00;
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px #00ff00;
+    }
+
+    .iframe-container h2::before {
+      content: '>>> ';
+      color: #00aa00;
+    }
+
+    .iframe-container h2::after {
+      content: ' <<<';
+      color: #00aa00;
+    }
+
+    .embedded-site {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #00aa00;
+      background-color: #000;
+      filter: 
+        hue-rotate(120deg) 
+        saturate(0.3) 
+        brightness(0.8) 
+        contrast(1.2);
+    }
