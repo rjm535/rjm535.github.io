@@ -100,14 +100,14 @@ function displayLists() {
         if(i == current_item) {
             temp_div += '<div class="controls" <li id="' + i
                      + '">'
-                     + '<button onclick="softDeleteItem(this)">x</button>'
+                     + '<button onclick="softDeleteItem(this)"> x </button>'
                      + todo_list[i]["name"] + " --  " + msToTime(todo_list[i]["time"])
                      + '</li> </div>';
         }
         else {
-            temp_div += '<div class="controls"><<li id="' + i
+            temp_div += '<div class="controls"> <li id="' + i
                      + '">'
-                     + 'button onclick="softDeleteItem(this)">x</button>'
+                     + 'button onclick="softDeleteItem(this)"> x </button>'
                      + todo_list[i]["name"] + " -- " +  msToTime(todo_list[i]["time"])
                      + '<button onclick="startItem(this)">Start</button>'
                      + '</li></div>';
