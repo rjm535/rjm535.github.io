@@ -121,6 +121,10 @@
       gap: 5px;
     }
 
+    .controls li {
+      gap: 12px;
+    }
+
     .controls button {
       padding: 4px 8px;
       font-size: 12px;
